@@ -8,9 +8,11 @@ using OfficeOpenXml.Style;
 using Status_200WebAPI.Models;
 using MimeKit;
 using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Status_200WebAPI.Controllers
 {
+    [Authorize(Roles = "1")]
     [Route("api/[controller]")]
     [ApiController]
     public class AdminController : ControllerBase

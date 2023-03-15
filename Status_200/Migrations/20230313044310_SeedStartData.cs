@@ -47,7 +47,7 @@ namespace Status_200.Migrations
             columns: new[] { "FirstName", "SecondName", "StatusId", "RoleId", "Email", "Password" },
             values: new object[,]
             {
-                    { "Status", "200", 1, 1, "Status200@mail.ru", "password1" },
+                    { "Status", "200", 1, 1, "sstatus200@mail.ru", "password1" },
             });
         }
 

@@ -9,6 +9,7 @@ using System.Security.Claims;
 
 namespace Status_200WebAPI.Controllers
 {
+    [Authorize(Roles = "2")]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -121,7 +122,10 @@ namespace Status_200WebAPI.Controllers
             {
                 try
                 {
-
+                    if (StatusTaskId == 4)
+                        reportChange.DateClosed = DateTime.Now;
+                    else
+                        reportChange.DateClosed = null;
                     reportChange.StatusReports = StatusTaskId;
                     await _context.SaveChangesAsync();
                     return Ok("Статус задачи " + reportChange.ProjectName + " успешно изменен");
